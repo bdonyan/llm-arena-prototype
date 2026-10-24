@@ -1,0 +1,18 @@
+{
+  "name": "full",
+  "agents": {
+    "luna": {"backend": "codex", "model": "gpt-6-luna"},
+    "sol": {"backend": "codex", "model": "gpt-6-sol"},
+    "sol61": {"backend": "codex", "model": "gpt-6.1-sol"}
+  },
+  "assignments": "all_permutations",
+  "games": ["sealed_bids", "open_bids"],
+  "chat_modes": [true, false],
+  "repetitions": 1,
+  "rounds": 6,
+  "scenarios": [
+    {"name": "clear_gain", "values": {"buyer_a": 100, "buyer_b": 80, "seller": 40}},
+    {"name": "narrow_gain", "values": {"buyer_a": 70, "buyer_b": 65, "seller": 60}},
+    {"name": "buyer_values_swapped", "values": {"buyer_a": 80, "buyer_b": 100, "seller": 40}}
+  ]
+}

@@ -1,0 +1,62 @@
+=== OBSERVER VIEW: GAME SETUP ===
+You can see all private values below. Each agent receives ONLY its own value.
+A private value is how much the item is worth to that player; it is NOT a bid.
+  buyer_a: model=gpt-6-luna; private value of obtaining the item=80; starting cash=150; starting items=0
+  buyer_b: model=gpt-6-sol; private value of obtaining the item=100; starting cash=150; starting items=0
+  seller: model=gpt-6.1-sol; private value of keeping the item=40; starting cash=0; starting items=1
+Game: sealed_bids; chat=on; at most 6 rounds.
+Both buyers bid independently from the previous-round history. Neither sees the other buyer's current-round bid or message before bidding.
+Buyer gain = item value - price paid if it wins; otherwise 0.
+Seller gain = price received - value of keeping the item; no sale means gain 0.
+Legal losing trades are allowed, so we can observe decisions that harm a player.
+=== NEGOTIATION ===
+
+[Observer setup/outcome annotations added after the run from saved metadata.
+Original terminal dialogue below is unchanged; no games were rerun.]
+
+Round 1/6
+Codex executable: [local installation path omitted for sharing]
+    Waiting for Codex (buyer_a, gpt-6-luna)...
+  buyer_a [gpt-6-luna]: bid 50
+    I’m offering 50 credits.
+    Waiting for Codex (buyer_b, gpt-6-sol)...
+  buyer_b [gpt-6-sol]: bid 52
+    I can offer 52 credits this round.
+    Waiting for Codex (seller, gpt-6.1-sol)...
+  seller [gpt-6.1-sol]: reject 80
+    I'm looking for 80 credits. Please improve your offers; the highest acceptable bid will win.
+
+Round 2/6
+    Waiting for Codex (buyer_a, gpt-6-luna)...
+  buyer_a [gpt-6-luna]: bid 53
+    I can improve my offer slightly this round.
+    Waiting for Codex (buyer_b, gpt-6-sol)...
+  buyer_b [gpt-6-sol]: bid 70
+    I can offer 70 credits this round.
+    Waiting for Codex (seller, gpt-6.1-sol)...
+  seller [gpt-6.1-sol]: reject 80
+    70 is close, but I’m holding out for 80 credits. A bid of 80 will secure the item unless there is a higher offer.
+
+Round 3/6
+    Waiting for Codex (buyer_a, gpt-6-luna)...
+  buyer_a [gpt-6-luna]: bid 80
+    I can meet the 80-credit asking price.
+    Waiting for Codex (buyer_b, gpt-6-sol)...
+  buyer_b [gpt-6-sol]: bid 80
+    I offer 80 credits.
+    Waiting for Codex (seller, gpt-6.1-sol)...
+  seller [gpt-6.1-sol]: accept buyer_a
+    Accepted at 80 credits.
+  TRADE: buyer_a buys for 80 credits.
+
+=== OBSERVER VIEW: OUTCOME AND CALCULATIONS ===
+Sale: buyer_a paid 80 credits to seller in round 3.
+  buyer_a: private value 80; gain = 80 - 80 = +0
+  buyer_b: private value 100; gain = 0 (did not buy)
+  seller: received 80; private keep-value 40; gain = 80 - 40 = +40
+Best possible total gain = max(0, max(80, 100) - 40) = 60.
+Actual total gain = A (+0) + B (+0) + seller (+40) = 40.
+Allocation efficiency = actual gain / best possible gain = 40 / 60 = 66.7%.
+Efficiency measures total gains realized; it is NOT a score of every player's bargaining skill.
+It does not measure speed, API usage, fairness, or whether every player benefited.
+Invalid actions: 0

@@ -1,0 +1,411 @@
+{
+  "config": {
+    "assignments": "cyclic",
+    "games": [
+      "sealed_bids"
+    ],
+    "chat_modes": [
+      true
+    ],
+    "repetitions": 1,
+    "rounds": 6,
+    "buyer_orders": [
+      [
+        "buyer_a",
+        "buyer_b"
+      ]
+    ],
+    "codex_timeout": 180,
+    "max_output_tokens": 512,
+    "name": "nine-games",
+    "agents": {
+      "luna": {
+        "backend": "codex",
+        "model": "gpt-6-luna"
+      },
+      "sol": {
+        "backend": "codex",
+        "model": "gpt-6-sol"
+      },
+      "sol61": {
+        "backend": "codex",
+        "model": "gpt-6.1-sol"
+      }
+    },
+    "scenarios": [
+      {
+        "name": "clear_gain",
+        "values": {
+          "buyer_a": 100,
+          "buyer_b": 80,
+          "seller": 40
+        }
+      },
+      {
+        "name": "narrow_gain",
+        "values": {
+          "buyer_a": 70,
+          "buyer_b": 65,
+          "seller": 60
+        }
+      },
+      {
+        "name": "buyer_values_swapped",
+        "values": {
+          "buyer_a": 80,
+          "buyer_b": 100,
+          "seller": 40
+        }
+      }
+    ]
+  },
+  "cases": [
+    {
+      "game": "sealed_bids",
+      "scenario": "clear_gain",
+      "values": {
+        "buyer_a": 100,
+        "buyer_b": 80,
+        "seller": 40
+      },
+      "roles": {
+        "buyer_a": "luna",
+        "buyer_b": "sol",
+        "seller": "sol61"
+      },
+      "agents": {
+        "luna": {
+          "backend": "codex",
+          "model": "gpt-6-luna"
+        },
+        "sol": {
+          "backend": "codex",
+          "model": "gpt-6-sol"
+        },
+        "sol61": {
+          "backend": "codex",
+          "model": "gpt-6.1-sol"
+        }
+      },
+      "buyer_order": [
+        "buyer_a",
+        "buyer_b"
+      ],
+      "repetition": 1,
+      "chat": true,
+      "rounds": 6,
+      "codex_timeout": 180,
+      "max_output_tokens": 512,
+      "id": "173cd9a0074d2197"
+    },
+    {
+      "game": "sealed_bids",
+      "scenario": "clear_gain",
+      "values": {
+        "buyer_a": 100,
+        "buyer_b": 80,
+        "seller": 40
+      },
+      "roles": {
+        "buyer_a": "sol",
+        "buyer_b": "sol61",
+        "seller": "luna"
+      },
+      "agents": {
+        "luna": {
+          "backend": "codex",
+          "model": "gpt-6-luna"
+        },
+        "sol": {
+          "backend": "codex",
+          "model": "gpt-6-sol"
+        },
+        "sol61": {
+          "backend": "codex",
+          "model": "gpt-6.1-sol"
+        }
+      },
+      "buyer_order": [
+        "buyer_a",
+        "buyer_b"
+      ],
+      "repetition": 1,
+      "chat": true,
+      "rounds": 6,
+      "codex_timeout": 180,
+      "max_output_tokens": 512,
+      "id": "b936c61a9b62dd48"
+    },
+    {
+      "game": "sealed_bids",
+      "scenario": "clear_gain",
+      "values": {
+        "buyer_a": 100,
+        "buyer_b": 80,
+        "seller": 40
+      },
+      "roles": {
+        "buyer_a": "sol61",
+        "buyer_b": "luna",
+        "seller": "sol"
+      },
+      "agents": {
+        "luna": {
+          "backend": "codex",
+          "model": "gpt-6-luna"
+        },
+        "sol": {
+          "backend": "codex",
+          "model": "gpt-6-sol"
+        },
+        "sol61": {
+          "backend": "codex",
+          "model": "gpt-6.1-sol"
+        }
+      },
+      "buyer_order": [
+        "buyer_a",
+        "buyer_b"
+      ],
+      "repetition": 1,
+      "chat": true,
+      "rounds": 6,
+      "codex_timeout": 180,
+      "max_output_tokens": 512,
+      "id": "d8895a8614692d3a"
+    },
+    {
+      "game": "sealed_bids",
+      "scenario": "narrow_gain",
+      "values": {
+        "buyer_a": 70,
+        "buyer_b": 65,
+        "seller": 60
+      },
+      "roles": {
+        "buyer_a": "luna",
+        "buyer_b": "sol",
+        "seller": "sol61"
+      },
+      "agents": {
+        "luna": {
+          "backend": "codex",
+          "model": "gpt-6-luna"
+        },
+        "sol": {
+          "backend": "codex",
+          "model": "gpt-6-sol"
+        },
+        "sol61": {
+          "backend": "codex",
+          "model": "gpt-6.1-sol"
+        }
+      },
+      "buyer_order": [
+        "buyer_a",
+        "buyer_b"
+      ],
+      "repetition": 1,
+      "chat": true,
+      "rounds": 6,
+      "codex_timeout": 180,
+      "max_output_tokens": 512,
+      "id": "077744bcc595a79a"
+    },
+    {
+      "game": "sealed_bids",
+      "scenario": "narrow_gain",
+      "values": {
+        "buyer_a": 70,
+        "buyer_b": 65,
+        "seller": 60
+      },
+      "roles": {
+        "buyer_a": "sol",
+        "buyer_b": "sol61",
+        "seller": "luna"
+      },
+      "agents": {
+        "luna": {
+          "backend": "codex",
+          "model": "gpt-6-luna"
+        },
+        "sol": {
+          "backend": "codex",
+          "model": "gpt-6-sol"
+        },
+        "sol61": {
+          "backend": "codex",
+          "model": "gpt-6.1-sol"
+        }
+      },
+      "buyer_order": [
+        "buyer_a",
+        "buyer_b"
+      ],
+      "repetition": 1,
+      "chat": true,
+      "rounds": 6,
+      "codex_timeout": 180,
+      "max_output_tokens": 512,
+      "id": "625f87b31fa6131f"
+    },
+    {
+      "game": "sealed_bids",
+      "scenario": "narrow_gain",
+      "values": {
+        "buyer_a": 70,
+        "buyer_b": 65,
+        "seller": 60
+      },
+      "roles": {
+        "buyer_a": "sol61",
+        "buyer_b": "luna",
+        "seller": "sol"
+      },
+      "agents": {
+        "luna": {
+          "backend": "codex",
+          "model": "gpt-6-luna"
+        },
+        "sol": {
+          "backend": "codex",
+          "model": "gpt-6-sol"
+        },
+        "sol61": {
+          "backend": "codex",
+          "model": "gpt-6.1-sol"
+        }
+      },
+      "buyer_order": [
+        "buyer_a",
+        "buyer_b"
+      ],
+      "repetition": 1,
+      "chat": true,
+      "rounds": 6,
+      "codex_timeout": 180,
+      "max_output_tokens": 512,
+      "id": "3f91054b29eb08d6"
+    },
+    {
+      "game": "sealed_bids",
+      "scenario": "buyer_values_swapped",
+      "values": {
+        "buyer_a": 80,
+        "buyer_b": 100,
+        "seller": 40
+      },
+      "roles": {
+        "buyer_a": "luna",
+        "buyer_b": "sol",
+        "seller": "sol61"
+      },
+      "agents": {
+        "luna": {
+          "backend": "codex",
+          "model": "gpt-6-luna"
+        },
+        "sol": {
+          "backend": "codex",
+          "model": "gpt-6-sol"
+        },
+        "sol61": {
+          "backend": "codex",
+          "model": "gpt-6.1-sol"
+        }
+      },
+      "buyer_order": [
+        "buyer_a",
+        "buyer_b"
+      ],
+      "repetition": 1,
+      "chat": true,
+      "rounds": 6,
+      "codex_timeout": 180,
+      "max_output_tokens": 512,
+      "id": "fc5a429ab095fb47"
+    },
+    {
+      "game": "sealed_bids",
+      "scenario": "buyer_values_swapped",
+      "values": {
+        "buyer_a": 80,
+        "buyer_b": 100,
+        "seller": 40
+      },
+      "roles": {
+        "buyer_a": "sol",
+        "buyer_b": "sol61",
+        "seller": "luna"
+      },
+      "agents": {
+        "luna": {
+          "backend": "codex",
+          "model": "gpt-6-luna"
+        },
+        "sol": {
+          "backend": "codex",
+          "model": "gpt-6-sol"
+        },
+        "sol61": {
+          "backend": "codex",
+          "model": "gpt-6.1-sol"
+        }
+      },
+      "buyer_order": [
+        "buyer_a",
+        "buyer_b"
+      ],
+      "repetition": 1,
+      "chat": true,
+      "rounds": 6,
+      "codex_timeout": 180,
+      "max_output_tokens": 512,
+      "id": "d4a2327f6090013d"
+    },
+    {
+      "game": "sealed_bids",
+      "scenario": "buyer_values_swapped",
+      "values": {
+        "buyer_a": 80,
+        "buyer_b": 100,
+        "seller": 40
+      },
+      "roles": {
+        "buyer_a": "sol61",
+        "buyer_b": "luna",
+        "seller": "sol"
+      },
+      "agents": {
+        "luna": {
+          "backend": "codex",
+          "model": "gpt-6-luna"
+        },
+        "sol": {
+          "backend": "codex",
+          "model": "gpt-6-sol"
+        },
+        "sol61": {
+          "backend": "codex",
+          "model": "gpt-6.1-sol"
+        }
+      },
+      "buyer_order": [
+        "buyer_a",
+        "buyer_b"
+      ],
+      "repetition": 1,
+      "chat": true,
+      "rounds": 6,
+      "codex_timeout": 180,
+      "max_output_tokens": 512,
+      "id": "274fd185b42c2142"
+    }
+  ],
+  "dry_run": false,
+  "config_hash": "8c403ec3faefd0b37eaf4daf9595131df287665836cd248f1cd5f28603137153",
+  "source_hash": "9aa49db45a90ed34961b5957bb232f7f1734412569ef65a09f8fdeb7e05aceda",
+  "created_at": "2026-10-23T14:49:38.995865+00:00",
+  "python_version": "3.10.0 (v3.10.0:b494f5935c, Oct  4 2021, 14:59:19) [Clang 12.0.5 (clang-1205.0.22.11)]"
+}

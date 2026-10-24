@@ -1,0 +1,40 @@
+=== OBSERVER VIEW: GAME SETUP ===
+You can see all private values below. Each agent receives ONLY its own value.
+A private value is how much the item is worth to that player; it is NOT a bid.
+  buyer_a: model=gpt-6-sol; private value of obtaining the item=70; starting cash=150; starting items=0
+  buyer_b: model=gpt-6.1-sol; private value of obtaining the item=65; starting cash=150; starting items=0
+  seller: model=gpt-6-luna; private value of keeping the item=60; starting cash=0; starting items=1
+Game: sealed_bids; chat=on; at most 6 rounds.
+Both buyers bid independently from the previous-round history. Neither sees the other buyer's current-round bid or message before bidding.
+Buyer gain = item value - price paid if it wins; otherwise 0.
+Seller gain = price received - value of keeping the item; no sale means gain 0.
+Legal losing trades are allowed, so we can observe decisions that harm a player.
+=== NEGOTIATION ===
+
+[Observer setup/outcome annotations added after the run from saved metadata.
+Original terminal dialogue below is unchanged; no games were rerun.]
+
+Round 1/6
+Codex executable: [local installation path omitted for sharing]
+    Waiting for Codex (buyer_a, gpt-6-sol)...
+  buyer_a [gpt-6-sol]: bid 40
+    I can offer 40 credits this round.
+    Waiting for Codex (buyer_b, gpt-6.1-sol)...
+  buyer_b [gpt-6.1-sol]: bid 40
+    I can offer 40 credits.
+    Waiting for Codex (seller, gpt-6-luna)...
+  seller [gpt-6-luna]: accept buyer_a
+    I accept buyer_a's offer of 40.
+  TRADE: buyer_a buys for 40 credits.
+
+=== OBSERVER VIEW: OUTCOME AND CALCULATIONS ===
+Sale: buyer_a paid 40 credits to seller in round 1.
+  buyer_a: private value 70; gain = 70 - 40 = +30
+  buyer_b: private value 65; gain = 0 (did not buy)
+  seller: received 40; private keep-value 60; gain = 40 - 60 = -20
+Best possible total gain = max(0, max(70, 65) - 60) = 10.
+Actual total gain = A (+30) + B (+0) + seller (-20) = 10.
+Allocation efficiency = actual gain / best possible gain = 10 / 10 = 100.0%.
+Efficiency measures total gains realized; it is NOT a score of every player's bargaining skill.
+It does not measure speed, API usage, fairness, or whether every player benefited.
+Invalid actions: 0

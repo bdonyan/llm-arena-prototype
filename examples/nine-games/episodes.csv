@@ -1,0 +1,10 @@
+case_id,status,dry_run,game,scenario,chat,repetition,buyer_a,buyer_b,seller,buyer_order,round_budget,attempts,agreement,price,rounds_played,efficiency,surplus,invalid_actions,elapsed_seconds,error,path
+173cd9a0074d2197,completed,False,sealed_bids,clear_gain,True,1,luna,sol,sol61,"buyer_a,buyer_b",6,1,True,90,3,1.0,60,0,52.161484708005446,,episodes/173cd9a0074d2197/attempt-001
+b936c61a9b62dd48,completed,False,sealed_bids,clear_gain,True,1,sol,sol61,luna,"buyer_a,buyer_b",6,1,True,55,1,1.0,60,0,17.32185620900418,,episodes/b936c61a9b62dd48/attempt-001
+d8895a8614692d3a,completed,False,sealed_bids,clear_gain,True,1,sol61,luna,sol,"buyer_a,buyer_b",6,1,True,75,3,1.0,60,0,49.88447237499349,,episodes/d8895a8614692d3a/attempt-001
+077744bcc595a79a,completed,False,sealed_bids,narrow_gain,True,1,luna,sol,sol61,"buyer_a,buyer_b",6,1,True,70,5,1.0,10,0,94.3948503749998,,episodes/077744bcc595a79a/attempt-001
+625f87b31fa6131f,completed,False,sealed_bids,narrow_gain,True,1,sol,sol61,luna,"buyer_a,buyer_b",6,1,True,40,1,1.0,10,0,16.51522158300213,,episodes/625f87b31fa6131f/attempt-001
+3f91054b29eb08d6,completed,False,sealed_bids,narrow_gain,True,1,sol61,luna,sol,"buyer_a,buyer_b",6,1,True,67,5,1.0,10,0,96.099038750006,,episodes/3f91054b29eb08d6/attempt-001
+fc5a429ab095fb47,completed,False,sealed_bids,buyer_values_swapped,True,1,luna,sol,sol61,"buyer_a,buyer_b",6,1,True,80,3,0.6666666666666666,40,0,44.40969866600062,,episodes/fc5a429ab095fb47/attempt-001
+d4a2327f6090013d,completed,False,sealed_bids,buyer_values_swapped,True,1,sol,sol61,luna,"buyer_a,buyer_b",6,1,True,60,1,1.0,60,0,17.706687416997738,,episodes/d4a2327f6090013d/attempt-001
+274fd185b42c2142,completed,False,sealed_bids,buyer_values_swapped,True,1,sol61,luna,sol,"buyer_a,buyer_b",6,1,True,99,1,1.0,60,0,14.732446416004677,,episodes/274fd185b42c2142/attempt-001
